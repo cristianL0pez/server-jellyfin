@@ -6,10 +6,9 @@ services:
     user: uid:gid
     network_mode: "host"
     volumes:
-      - /path/to/config:/config
-      - /path/to/cache:/cache
-      - /path/to/media:/media
-      - /path/to/media2:/media2:ro
+      - /home/cristianl0pez/server-flix/config
+      - /home/cristianl0pez/server-flix/cache
+      - /home/cristianl0pez/server-flix/media
     restart: "unless-stopped"
     # Optional - alternative address used for autodiscovery
     environment:
