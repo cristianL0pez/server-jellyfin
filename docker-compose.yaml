@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+
+  jellyfin:
+    image: linuxserver/jellyfin
+    container_name: jellyfin
+    restart: unless-stopped 
+    ports:
+      - "8200:8096"
+#     - "8920:8920" #optional      
+    environment:
+      - PUID=998
+      - PGID=1000
+      - TZ=America/Santiago
+#     - UMASK_SET=022 #optional  
+    volumes:
+      - ./home/cristianl0pez/server-flix/config:/config
+      - ./home/cristianl0pez/server-flix/Series:/data/tvshows  
+      - ./home/cristianl0pez/server-flix/Peliculas:/data/movies 
+      - ./home/cristianl0pez/server-flix/Animes:/data/animes 
+      
